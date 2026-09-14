@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Riki Food - Makanan Enak Setiap Hari</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e67e22;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(
+                135deg,
+                #fff3e0,
+                #ffffff
+            );
+        }
+
+        .hero .emoji {
+            font-size: 70px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           KEUNGGULAN
+        ========================= */
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+            background: white;
+        }
+
+        .feature {
+            width: 220px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 240px;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .food {
+            font-size: 60px;
+        }
+
+        .card h3 {
+            font-size: 23px;
+            margin: 15px 0 10px;
+        }
+
+        .price {
+            font-size: 19px;
+            margin-bottom: 20px;
+        }
+
+        .add-button {
+            border: none;
+            background: #e67e22;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .add-button:hover {
+            background: #d35400;
+        }
+
+
+        /* =========================
+           KERANJANG
+        ========================= */
+
+        .cart {
+            background: white;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .cart h2 {
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .item-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .item-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .item-price {
+            margin-top: 5px;
+            color: #666;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quantity button {
+            width: 35px;
+            height: 35px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .delete {
+            border: none;
+            background: #eee;
+            padding: 9px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .total {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form {
+            text-align: left;
+            margin-top: 25px;
+        }
+
+        .form label {
+            display: block;
+            font-weight: bold;
+            margin: 15px 0 7px;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .form textarea {
+            height: 90px;
+            resize: vertical;
+        }
+
+        .whatsapp {
+            width: 100%;
+            border: none;
+            background: #25D366;
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .whatsapp:hover {
+            background: #1ebe5d;
+        }
+
+
+        /* =========================
+           INFORMASI USAHA
+        ========================= */
+
+        .info {
+            background: #222;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .info h2 {
+            margin-bottom: 20px;
+        }
+
+        .info p {
+            margin: 10px 0;
+            color: #ddd;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        /* =========================
+           HP
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .cart {
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 20px;
+            }
+
+            .cart-item {
+                flex-wrap: wrap;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        🍔 Riki Food
+    </div>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#menu">Menu</a>
+
+        <a href="#keranjang">Keranjang</a>
+
+        <a href="#kontak">Kontak</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="emoji">
+        🍔
+    </div>
+
+    <h1>
+        Riki Food
+    </h1>
+
+    <p>
+        Makanan enak, harga bersahabat!
+    </p>
+
+    <a
+        href="#menu"
+        class="hero-button">
+
+        Lihat Menu
+
+    </a>
+
+</section>
+
+
+<!-- =========================
+     KEUNGGULAN
+========================= -->
+
+<section class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            🍔
+        </div>
+
+        <h3>
+            Enak
+        </h3>
+
+        <p>
+            Dibuat dengan bahan berkualitas.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            ⚡
+        </div>
+
+        <h3>
+            Cepat
+        </h3>
+
+        <p>
+            Pesanan diproses dengan cepat.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            💰
+        </div>
+
+        <h3>
+            Terjangkau
+        </h3>
+
+        <p>
+            Harga bersahabat untuk semua.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section class="section" id="menu">
+
+    <h2 class="section-title">
+        🍽️ Menu Kami
+    </h2>
+
+
+    <div class="menu">
+
+
+        <!-- BURGER -->
+
+        <div class="card">
+
+            <div class="food">
+                🍔
+            </div>
+
+            <h3>
+                Burger
+            </h3>
+
+            <div class="price">
+                Rp25.000
+            </div>
+
+            <button
+                class="add-button"
+                onclick="tambahKeKeranjang('Burger', 25000)">
+
+                Tambah
+
+            </button>
+
+        </div>
+
+
+        <!-- MIE AYAM -->
+
+        <div class="card">
+
+            <div class="food">
+                🍜
+            </div>
+
+            <h3>
+                Mie Ayam
+            </h3>
+
+            <div class="price">
+                Rp15.000
+            </div>
+
+            <button
+                class="add-button"
+                onclick="tambahKeKeranjang('Mie Ayam', 15000)">
+
+                Tambah
+
+            </button>
+
+        </div>
+
+
+        <!-- AYAM CRISPY -->
+
+        <div class="card">
+
+            <div class="food">
+                🍗
+            </div>
+
+            <h3>
+                Ayam Crispy
+            </h3>
+
+            <div class="price">
+                Rp20.000
+            </div>
+
+            <button
+                class="add-button"
+                onclick="tambahKeKeranjang('Ayam Crispy', 20000)">
+
+                Tambah
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     KERANJANG
+========================= -->
+
+<section id="keranjang">
+
+    <div class="cart">
+
+        <h2>
+            🛒 Keranjang
+        </h2>
+
+        <div id="cartItems">
+
+            Keranjang masih kosong.
+
+        </div>
+
+
+        <div class="total">
+
+            Total: Rp<span id="total">0</span>
+
+        </div>
+
+
+        <!-- FORM PELANGGAN -->
+
+        <div class="form">
+
+            <label for="nama">
+                Nama Anda
+            </label>
+
+            <input
+                type="text"
+                id="nama"
+                placeholder="Contoh: Riki"
+            >
+
+
+            <label for="catatan">
+                Catatan Pesanan
+            </label>
+
+            <textarea
+                id="catatan"
+                placeholder="Contoh: tidak pedas, tanpa bawang..."
+            ></textarea>
+
+        </div>
+
+
+        <br>
+
+
+        <button
+            class="whatsapp"
+            onclick="pesanWhatsApp()">
+
+            📱 Pesan via WhatsApp
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INFORMASI
+========================= -->
+
+<section class="info" id="kontak">
+
+    <h2>
+        📍 Riki Food
+    </h2>
+
+    <p>
+        📍 Alamat: Jl. Contoh No. 123, Jakarta
+    </p>
+
+    <p>
+        🕐 Jam buka: 09.00 - 21.00
+    </p>
+
+    <p>
+        📞 WhatsApp: 0812-3456-7890
+    </p>
+
+</section>
+
+
+<footer>
+
+    © 2026 Riki Food.
+    Semua hak dilindungi.
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    let keranjang = [];
+
+
+    // TAMBAH BARANG
+
+    function tambahKeKeranjang(nama, harga) {
+
+        const item = keranjang.find(
+            item => item.nama === nama
+        );
+
+
+        if (item) {
+
+            item.jumlah++;
+
+        } else {
+
+            keranjang.push({
+
+                nama: nama,
+                harga: harga,
+                jumlah: 1
+
+            });
+
+        }
+
+
+        tampilkanKeranjang();
+
+    }
+
+
+    // TAMBAH JUMLAH
+
+    function tambahJumlah(index) {
+
+        keranjang[index].jumlah++;
+
+        tampilkanKeranjang();
+
+    }
+
+
+    // KURANGI JUMLAH
+
+    function kurangiJumlah(index) {
+
+        keranjang[index].jumlah--;
+
+
+        if (keranjang[index].jumlah <= 0) {
+
+            keranjang.splice(index, 1);
+
+        }
+
+
+        tampilkanKeranjang();
+
+    }
+
+
+    // HAPUS BARANG
+
+    function hapusBarang(index) {
+
+        keranjang.splice(index, 1);
+
+        tampilkanKeranjang();
+
+    }
+
+
+    // TAMPILKAN KERANJANG
+
+    function tampilkanKeranjang() {
+
+        const cartItems =
+            document.getElementById("cartItems");
+
+        const totalElement =
+            document.getElementById("total");
+
+
+        if (keranjang.length === 0) {
+
+            cartItems.innerHTML =
+                "Keranjang masih kosong.";
+
+            totalElement.textContent = "0";
+
+            return;
+
+        }
+
+
+        let isi = "";
+
+        let total = 0;
+
+
+        keranjang.forEach(
+            (item, index) => {
+
+                const subtotal =
+                    item.harga * item.jumlah;
+
+
+                total += subtotal;
+
+
+                isi += `
+
+                    <div class="cart-item">
+
+                        <div class="item-info">
+
+                            <div class="item-name">
+                                ${item.nama}
+                            </div>
+
+                            <div class="item-price">
+                                Rp${item.harga.toLocaleString("id-ID")}
+                            </div>
+
+                        </div>
+
+
+                        <div class="quantity">
+
+                            <button
+                                onclick="kurangiJumlah(${index})">
+
+                                −
+
+                            </button>
+
+
+                            <span>
+                                ${item.jumlah}
+                            </span>
+
+
+                            <button
+                                onclick="tambahJumlah(${index})">
+
+                                +
+
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            class="delete"
+                            onclick="hapusBarang(${index})">
+
+                            🗑️
+
+                        </button>
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+
+        cartItems.innerHTML = isi;
+
+
+        totalElement.textContent =
+            total.toLocaleString("id-ID");
+
+    }
+
+
+    // WHATSAPP
+
+    function pesanWhatsApp() {
+
+        if (keranjang.length === 0) {
+
+            alert(
+                "Silakan pilih makanan terlebih dahulu."
+            );
+
+            return;
+
+        }
+
+
+        const nama =
+            document.getElementById("nama").value.trim();
+
+
+        const catatan =
+            document.getElementById("catatan").value.trim();
+
+
+        if (nama === "") {
+
+            alert(
+                "Silakan masukkan nama Anda."
+            );
+
+            return;
+
+        }
+
+
+        /*
+            GANTI NOMOR INI
+            DENGAN NOMOR WHATSAPP
+            PEMILIK USAHA.
+        */
+
+        const nomor =
+            "6281234567890";
+
+
+        let pesan =
+            "Halo Riki Food, saya ingin memesan:%0A%0A";
+
+
+        let total = 0;
+
+
+        keranjang.forEach(item => {
+
+            const subtotal =
+                item.harga * item.jumlah;
+
+
+            total += subtotal;
+
+
+            pesan +=
+                "- " +
+                item.nama +
+                " x" +
+                item.jumlah +
+                " = Rp" +
+                subtotal.toLocaleString("id-ID") +
+                "%0A";
+
+        });
+
+
+        pesan +=
+            "%0ATotal: Rp" +
+            total.toLocaleString("id-ID");
+
+
+        pesan +=
+            "%0ANama: " +
+            encodeURIComponent(nama);
+
+
+        if (catatan !== "") {
+
+            pesan +=
+                "%0ACatatan: " +
+                encodeURIComponent(catatan);
+
+        }
+
+
+        const url =
+            "https://wa.me/" +
+            nomor +
+            "?text=" +
+            pesan;
+
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
