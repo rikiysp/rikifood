@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Riki Food | Makanan Lezat & Berkualitas</title>
+    <title>Riki Ice Cream | Es Krim Lezat & Segar</title>
 
-    <meta name="description" content="Riki Food menyediakan makanan lezat, berkualitas, dan terjangkau. Pesan makanan favoritmu sekarang.">
+    <meta name="description"
+        content="Riki Ice Cream menyediakan es krim lezat dengan berbagai rasa favorit. Pesan sekarang!">
 
     <style>
 
@@ -19,8 +23,8 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f8f8f8;
-            color: #222;
+            background: #fff9fc;
+            color: #333;
             line-height: 1.6;
         }
 
@@ -32,28 +36,31 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #eee;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #f3dce7;
         }
 
         .navbar {
             max-width: 1150px;
             margin: auto;
             padding: 16px 20px;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .logo {
             font-size: 24px;
             font-weight: 800;
-            color: #ff6b00;
+            color: #f05b9d;
+            white-space: nowrap;
         }
 
         .logo span {
-            color: #222;
+            color: #6b4f91;
         }
 
         nav {
@@ -63,26 +70,28 @@
 
         nav a {
             text-decoration: none;
-            color: #333;
+            color: #444;
             font-weight: 600;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: #ff6b00;
+            color: #f05b9d;
         }
 
         .cart-button {
-            background: #ff6b00;
+            text-decoration: none;
+            background: #f05b9d;
             color: white;
             padding: 10px 16px;
-            border-radius: 10px;
-            text-decoration: none;
+            border-radius: 12px;
             font-weight: bold;
+            transition: 0.3s;
+            white-space: nowrap;
         }
 
         .cart-button:hover {
-            background: #e85d00;
+            transform: translateY(-2px);
         }
 
 
@@ -92,18 +101,30 @@
 
         .hero {
             min-height: 650px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 25%,
+                    #ffd6e9,
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fff0f7,
+                    #fffaff
+                );
+
             display: flex;
             align-items: center;
-            background:
-                radial-gradient(circle at 80% 30%, rgba(255,107,0,0.18), transparent 30%),
-                linear-gradient(135deg, #fff7f0, #ffffff);
         }
 
         .hero-container {
             max-width: 1150px;
             width: 100%;
             margin: auto;
+
             padding: 80px 20px;
+
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
@@ -114,15 +135,16 @@
             font-size: 58px;
             line-height: 1.1;
             margin-bottom: 20px;
+            color: #3e3150;
         }
 
         .hero-text h1 span {
-            color: #ff6b00;
+            color: #f05b9d;
         }
 
         .hero-text p {
+            color: #777;
             font-size: 19px;
-            color: #666;
             max-width: 550px;
             margin-bottom: 30px;
         }
@@ -135,57 +157,87 @@
 
         .btn-primary {
             display: inline-block;
-            background: #ff6b00;
+
+            background: #f05b9d;
             color: white;
-            padding: 14px 24px;
+
+            padding: 14px 25px;
+
             border-radius: 12px;
             text-decoration: none;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255,107,0,0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(240,91,157,0.25);
         }
 
         .btn-secondary {
             display: inline-block;
-            border: 2px solid #222;
-            color: #222;
+
+            border: 2px solid #6b4f91;
+            color: #6b4f91;
+
             padding: 12px 24px;
+
             border-radius: 12px;
             text-decoration: none;
+
             font-weight: bold;
         }
 
-        .hero-food {
+
+        /* =========================
+           ICE CREAM HERO
+        ========================= */
+
+        .hero-icecream {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .food-circle {
-            width: 360px;
-            height: 360px;
+        .icecream-circle {
+
+            width: 370px;
+            height: 370px;
+
             border-radius: 50%;
-            background: linear-gradient(135deg, #ff6b00, #ff9a3c);
+
+            background:
+                radial-gradient(
+                    circle at 30% 25%,
+                    #ffffff,
+                    #ffd9e8 35%,
+                    #f6a7c9
+                );
+
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 160px;
-            box-shadow: 0 30px 60px rgba(255,107,0,0.25);
+            justify-content: center;
+
+            font-size: 170px;
+
+            box-shadow:
+                0 30px 60px rgba(240,91,157,0.20);
+
             animation: floating 3s ease-in-out infinite;
         }
 
         @keyframes floating {
-            0%, 100% {
+
+            0%,100% {
                 transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-12px);
+                transform: translateY(-15px);
             }
+
         }
 
 
@@ -201,35 +253,45 @@
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3,1fr);
             gap: 25px;
         }
 
         .feature {
+
             background: white;
+
             padding: 30px;
-            border-radius: 18px;
+
+            border-radius: 20px;
+
             text-align: center;
-            border: 1px solid #eee;
+
+            border: 1px solid #f3dce7;
+
             transition: 0.3s;
         }
 
         .feature:hover {
+
             transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.07);
         }
 
         .feature-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-size: 42px;
+            margin-bottom: 12px;
         }
 
         .feature h3 {
             margin-bottom: 8px;
+            color: #4c385e;
         }
 
         .feature p {
-            color: #777;
+            color: #888;
         }
 
 
@@ -244,11 +306,12 @@
 
         .section-title h2 {
             font-size: 38px;
-            margin-bottom: 10px;
+            color: #3e3150;
+            margin-bottom: 8px;
         }
 
         .section-title p {
-            color: #777;
+            color: #888;
         }
 
 
@@ -257,50 +320,86 @@
         ========================= */
 
         #menu {
+
             max-width: 1150px;
+
             margin: auto;
+
             padding: 80px 20px;
         }
 
         .menu-grid {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3,1fr);
+
             gap: 25px;
         }
 
         .menu-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #eee;
-            transition: 0.3s;
+
             position: relative;
+
+            background: white;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            border: 1px solid #f2dce7;
+
+            transition: 0.3s;
         }
 
         .menu-card:hover {
+
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+
+            box-shadow:
+                0 20px 40px rgba(90,50,80,0.12);
         }
 
-        .best-seller {
+        .badge {
+
             position: absolute;
+
             top: 15px;
             left: 15px;
-            background: #222;
+
+            background: #6b4f91;
+
             color: white;
-            padding: 6px 10px;
+
+            padding: 6px 11px;
+
             border-radius: 8px;
+
             font-size: 12px;
+
             font-weight: bold;
+
+            z-index: 2;
         }
 
         .food-image {
-            height: 220px;
+
+            height: 230px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
-            font-size: 100px;
-            background: linear-gradient(135deg, #fff0e5, #fff8f2);
+
+            font-size: 105px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f7,
+                    #fff9fc
+                );
         }
 
         .menu-content {
@@ -308,41 +407,68 @@
         }
 
         .menu-content h3 {
-            font-size: 22px;
+
+            font-size: 21px;
+
+            color: #43334f;
+
             margin-bottom: 8px;
         }
 
         .menu-content p {
-            color: #777;
+
+            color: #888;
+
             font-size: 14px;
-            margin-bottom: 15px;
+
+            min-height: 45px;
+
+            margin-bottom: 16px;
         }
 
         .menu-bottom {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
+            gap: 10px;
         }
 
         .price {
+
+            color: #f05b9d;
+
             font-size: 20px;
+
             font-weight: 800;
-            color: #ff6b00;
         }
 
         .add-btn {
+
             border: none;
-            background: #ff6b00;
+
+            background: #f05b9d;
+
             color: white;
+
             padding: 10px 15px;
+
             border-radius: 9px;
+
             cursor: pointer;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .add-btn:hover {
-            background: #e85d00;
+
+            background: #dd4387;
+
             transform: scale(1.05);
         }
 
@@ -352,21 +478,38 @@
         ========================= */
 
         .promo {
-            max-width: 1150px;
-            margin: 30px auto 80px;
+
+            max-width: 1100px;
+
+            margin: 20px auto 80px;
+
             padding: 50px;
+
             border-radius: 25px;
-            background: linear-gradient(135deg, #ff6b00, #ff8c32);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f05b9d,
+                    #b77bd4
+                );
+
             color: white;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             gap: 30px;
         }
 
         .promo h2 {
+
             font-size: 35px;
-            margin-bottom: 10px;
+
+            margin-bottom: 8px;
         }
 
         .promo p {
@@ -374,12 +517,19 @@
         }
 
         .promo-button {
+
             background: white;
-            color: #ff6b00;
+
+            color: #f05b9d;
+
             padding: 14px 22px;
+
             border-radius: 12px;
+
             text-decoration: none;
+
             font-weight: bold;
+
             white-space: nowrap;
         }
 
@@ -389,16 +539,23 @@
         ========================= */
 
         #keranjang {
+
             max-width: 850px;
+
             margin: auto;
+
             padding: 80px 20px;
         }
 
         .cart-box {
+
             background: white;
-            border-radius: 20px;
+
+            border-radius: 22px;
+
             padding: 30px;
-            border: 1px solid #eee;
+
+            border: 1px solid #f2dce7;
         }
 
         #daftarKeranjang {
@@ -406,11 +563,17 @@
         }
 
         .cart-item {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             padding: 15px 0;
+
             border-bottom: 1px solid #eee;
+
             gap: 15px;
         }
 
@@ -423,79 +586,176 @@
         }
 
         .cart-item-price {
-            color: #777;
+
+            color: #888;
+
             font-size: 14px;
         }
 
         .quantity {
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
         }
 
         .quantity button {
+
             border: none;
+
             width: 30px;
             height: 30px;
+
             border-radius: 7px;
-            background: #eee;
+
+            background: #f5e8ef;
+
             cursor: pointer;
+
             font-weight: bold;
+
+            color: #6b4f91;
         }
 
         .delete-btn {
+
             border: none;
-            background: #ffe8e8;
-            color: #d00;
+
+            background: #ffe7ee;
+
+            color: #d33;
+
             padding: 8px 10px;
+
             border-radius: 7px;
+
             cursor: pointer;
         }
 
         .cart-total {
+
             text-align: right;
+
             font-size: 24px;
+
             font-weight: bold;
+
             margin: 25px 0;
+
+            color: #43334f;
         }
 
         .customer-form {
+
             display: grid;
+
             gap: 12px;
+
             margin-top: 25px;
         }
 
         .customer-form input,
         .customer-form textarea {
+
             width: 100%;
+
             padding: 14px;
-            border: 1px solid #ddd;
+
+            border: 1px solid #e3d6df;
+
             border-radius: 10px;
+
             font-family: inherit;
+
             font-size: 15px;
+
+            outline: none;
+        }
+
+        .customer-form input:focus,
+        .customer-form textarea:focus {
+
+            border-color: #f05b9d;
+
         }
 
         .customer-form textarea {
+
             min-height: 100px;
+
             resize: vertical;
         }
 
-        .whatsapp-btn {
-            width: 100%;
-            border: none;
-            background: #25d366;
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
+        .payment-title {
+
             font-weight: bold;
+
+            margin-top: 10px;
+
+            color: #43334f;
+        }
+
+        .payment-options {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 10px;
+        }
+
+        .payment-option {
+
+            border: 1px solid #ead9e2;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
             cursor: pointer;
+
+            background: #fffafe;
+        }
+
+        .payment-option input {
+
+            width: auto;
+
+            margin-right: 7px;
+        }
+
+        .whatsapp-btn {
+
+            width: 100%;
+
+            border: none;
+
+            background: #25d366;
+
+            color: white;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
             transition: 0.3s;
         }
 
         .whatsapp-btn:hover {
+
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37,211,102,0.2);
+
+            box-shadow:
+                0 10px 20px rgba(37,211,102,0.2);
         }
 
 
@@ -504,43 +764,61 @@
         ========================= */
 
         #kontak {
-            background: #111;
+
+            background: #30263a;
+
             color: white;
+
             padding: 80px 20px;
         }
 
         .contact-container {
+
             max-width: 1150px;
+
             margin: auto;
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 50px;
         }
 
         .contact-container h2 {
+
             font-size: 38px;
+
             margin-bottom: 15px;
         }
 
         .contact-container p {
-            color: #bbb;
-            margin-bottom: 10px;
+
+            color: #d5ceda;
         }
 
         .contact-info {
+
             display: grid;
-            gap: 20px;
+
+            gap: 15px;
         }
 
         .contact-card {
-            background: #1c1c1c;
+
+            background: #403449;
+
             padding: 20px;
+
             border-radius: 12px;
         }
 
         .contact-card strong {
+
             display: block;
-            color: #ff8c32;
+
+            color: #ff9fc5;
+
             margin-bottom: 5px;
         }
 
@@ -550,16 +828,21 @@
         ========================= */
 
         footer {
-            background: #090909;
-            color: #888;
+
+            background: #211b28;
+
+            color: #aaa;
+
             text-align: center;
+
             padding: 25px 20px;
+
             font-size: 14px;
         }
 
 
         /* =========================
-           RESPONSIVE
+           MOBILE
         ========================= */
 
         @media (max-width: 800px) {
@@ -569,60 +852,84 @@
             }
 
             .hero-container {
+
                 grid-template-columns: 1fr;
+
                 text-align: center;
             }
 
             .hero-text p {
+
                 margin-left: auto;
                 margin-right: auto;
             }
 
             .hero-buttons {
+
                 justify-content: center;
             }
 
-            .food-circle {
+            .icecream-circle {
+
                 width: 280px;
                 height: 280px;
-                font-size: 120px;
+
+                font-size: 125px;
             }
 
             .feature-grid {
+
                 grid-template-columns: 1fr;
             }
 
             .menu-grid {
+
                 grid-template-columns: 1fr;
             }
 
             .promo {
+
                 margin-left: 20px;
                 margin-right: 20px;
+
                 padding: 35px 25px;
+
                 flex-direction: column;
+
                 text-align: center;
             }
 
             .contact-container {
+
                 grid-template-columns: 1fr;
             }
 
             .hero-text h1 {
+
                 font-size: 42px;
             }
 
             .section-title h2 {
+
                 font-size: 32px;
             }
 
             .cart-item {
+
                 flex-wrap: wrap;
             }
+
+            .payment-options {
+
+                grid-template-columns: 1fr;
+            }
+
         }
 
     </style>
+
 </head>
+
 
 <body>
 
@@ -636,14 +943,19 @@
     <div class="navbar">
 
         <div class="logo">
-            🍔 Riki<span>Food</span>
+            🍦 Riki<span>Ice Cream</span>
         </div>
 
         <nav>
+
             <a href="#home">Home</a>
+
             <a href="#menu">Menu</a>
+
             <a href="#keranjang">Keranjang</a>
+
             <a href="#kontak">Kontak</a>
+
         </nav>
 
         <a href="#keranjang" class="cart-button">
@@ -666,20 +978,21 @@
         <div class="hero-text">
 
             <h1>
-                Nikmati Makanan
-                <span>Lezat</span> Setiap Hari 🍔
+                Temukan Rasa
+                <span>Bahagia</span>
+                dalam Setiap Scoop 🍦
             </h1>
 
             <p>
-                Riki Food menyediakan makanan lezat,
-                berkualitas, dan terjangkau untuk menemani
-                hari kamu.
+                Es krim lembut, creamy, dan dibuat
+                untuk membuat hari kamu menjadi
+                lebih manis.
             </p>
 
             <div class="hero-buttons">
 
                 <a href="#menu" class="btn-primary">
-                    Lihat Menu →
+                    🍨 Lihat Menu
                 </a>
 
                 <a href="#kontak" class="btn-secondary">
@@ -691,10 +1004,10 @@
         </div>
 
 
-        <div class="hero-food">
+        <div class="hero-icecream">
 
-            <div class="food-circle">
-                🍔
+            <div class="icecream-circle">
+                🍦
             </div>
 
         </div>
@@ -715,14 +1028,14 @@
         <div class="feature">
 
             <div class="feature-icon">
-                😋
+                🍓
             </div>
 
-            <h3>Rasa Lezat</h3>
+            <h3>Bahan Berkualitas</h3>
 
             <p>
-                Dibuat dengan bahan berkualitas
-                untuk menghasilkan rasa terbaik.
+                Menggunakan bahan pilihan
+                untuk rasa yang lebih nikmat.
             </p>
 
         </div>
@@ -731,14 +1044,14 @@
         <div class="feature">
 
             <div class="feature-icon">
-                ⚡
+                ❄️
             </div>
 
-            <h3>Pelayanan Cepat</h3>
+            <h3>Selalu Fresh</h3>
 
             <p>
-                Pesanan diproses dengan cepat
-                dan praktis.
+                Es krim disimpan dengan baik
+                agar tetap segar dan creamy.
             </p>
 
         </div>
@@ -747,14 +1060,14 @@
         <div class="feature">
 
             <div class="feature-icon">
-                💰
+                ❤️
             </div>
 
-            <h3>Harga Terjangkau</h3>
+            <h3>Dibuat dengan Cinta</h3>
 
             <p>
-                Makanan berkualitas dengan
-                harga yang bersahabat.
+                Setiap pesanan dipersiapkan
+                dengan penuh perhatian.
             </p>
 
         </div>
@@ -772,11 +1085,13 @@
 
     <div class="section-title">
 
-        <h2>Menu Favorit 🍽️</h2>
+        <h2>
+            🍨 Menu Es Krim
+        </h2>
 
         <p>
-            Pilih makanan favoritmu dan tambahkan
-            ke keranjang.
+            Pilih rasa favoritmu dan nikmati
+            kesegaran Riki Ice Cream.
         </p>
 
     </div>
@@ -785,37 +1100,39 @@
     <div class="menu-grid">
 
 
-        <!-- BURGER -->
+        <!-- STRAWBERRY -->
 
         <div class="menu-card">
 
-            <div class="best-seller">
+            <div class="badge">
                 🔥 BEST SELLER
             </div>
 
             <div class="food-image">
-                🍔
+                🍓
             </div>
 
             <div class="menu-content">
 
-                <h3>Burger Special</h3>
+                <h3>Strawberry Bliss</h3>
 
                 <p>
-                    Burger dengan daging juicy,
-                    sayuran segar dan saus spesial.
+                    Es krim strawberry lembut
+                    dengan rasa buah yang segar.
                 </p>
 
                 <div class="menu-bottom">
 
                     <div class="price">
-                        Rp25.000
+                        Rp18.000
                     </div>
 
                     <button
                         class="add-btn"
-                        onclick="tambahKeKeranjang('Burger Special', 25000)">
+                        onclick="tambahKeKeranjang('Strawberry Bliss',18000)">
+
                         + Tambah
+
                     </button>
 
                 </div>
@@ -825,73 +1142,195 @@
         </div>
 
 
-        <!-- MIE AYAM -->
+        <!-- CHOCOLATE -->
 
         <div class="menu-card">
 
+            <div class="badge">
+                🍫 FAVORIT
+            </div>
+
             <div class="food-image">
-                🍜
+                🍫
             </div>
 
             <div class="menu-content">
 
-                <h3>Mie Ayam</h3>
+                <h3>Choco Dream</h3>
 
                 <p>
-                    Mie ayam gurih dengan topping
-                    ayam dan sayuran segar.
+                    Cokelat creamy dengan rasa
+                    manis dan rich.
                 </p>
 
                 <div class="menu-bottom">
 
-                    <div class="price">
-                        Rp15.000
-                    </div>
-
-                    <button
-                        class="add-btn"
-                        onclick="tambahKeKeranjang('Mie Ayam', 15000)">
-                        + Tambah
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- AYAM CRISPY -->
-
-        <div class="menu-card">
-
-            <div class="best-seller">
-                ⭐ FAVORIT
-            </div>
-
-            <div class="food-image">
-                🍗
-            </div>
-
-            <div class="menu-content">
-
-                <h3>Ayam Crispy</h3>
-
-                <p>
-                    Ayam crispy renyah di luar,
-                    juicy dan lezat di dalam.
-                </p>
-
-                <div class="menu-bottom">
-789
                     <div class="price">
                         Rp20.000
                     </div>
 
                     <button
                         class="add-btn"
-                        onclick="tambahKeKeranjang('Ayam Crispy', 20000)">
+                        onclick="tambahKeKeranjang('Choco Dream',20000)">
+
                         + Tambah
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VANILLA -->
+
+        <div class="menu-card">
+
+            <div class="food-image">
+                🍦
+            </div>
+
+            <div class="menu-content">
+
+                <h3>Vanilla Cloud</h3>
+
+                <p>
+                    Vanilla klasik yang lembut,
+                    creamy dan harum.
+                </p>
+
+                <div class="menu-bottom">
+
+                    <div class="price">
+                        Rp17.000
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="tambahKeKeranjang('Vanilla Cloud',17000)">
+
+                        + Tambah
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MANGO -->
+
+        <div class="menu-card">
+
+            <div class="food-image">
+                🥭
+            </div>
+
+            <div class="menu-content">
+
+                <h3>Mango Tropical</h3>
+
+                <p>
+                    Sensasi mangga tropis yang
+                    manis dan menyegarkan.
+                </p>
+
+                <div class="menu-bottom">
+
+                    <div class="price">
+                        Rp19.000
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="tambahKeKeranjang('Mango Tropical',19000)">
+
+                        + Tambah
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- COOKIES -->
+
+        <div class="menu-card">
+
+            <div class="badge">
+                ⭐ NEW
+            </div>
+
+            <div class="food-image">
+                🍪
+            </div>
+
+            <div class="menu-content">
+
+                <h3>Cookies & Cream</h3>
+
+                <p>
+                    Perpaduan es krim creamy
+                    dengan cookies renyah.
+                </p>
+
+                <div class="menu-bottom">
+
+                    <div class="price">
+                        Rp22.000
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="tambahKeKeranjang('Cookies & Cream',22000)">
+
+                        + Tambah
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MATCHA -->
+
+        <div class="menu-card">
+
+            <div class="food-image">
+                🍵
+            </div>
+
+            <div class="menu-content">
+
+                <h3>Matcha Love</h3>
+
+                <p>
+                    Matcha lembut dengan rasa
+                    khas yang elegan.
+                </p>
+
+                <div class="menu-bottom">
+
+                    <div class="price">
+                        Rp22.000
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="tambahKeKeranjang('Matcha Love',22000)">
+
+                        + Tambah
+
                     </button>
 
                 </div>
@@ -913,11 +1352,13 @@
 
     <div>
 
-        <h2>🍔 Lagi Lapar?</h2>
+        <h2>
+            🍦 Saatnya Bikin Harimu Lebih Manis!
+        </h2>
 
         <p>
-            Jangan tunggu lama. Pilih makanan
-            favoritmu sekarang!
+            Pilih rasa favoritmu dan pesan
+            sekarang melalui WhatsApp.
         </p>
 
     </div>
@@ -937,10 +1378,13 @@
 
     <div class="section-title">
 
-        <h2>🛒 Keranjang Pesanan</h2>
+        <h2>
+            🛒 Pesanan Kamu
+        </h2>
 
         <p>
-            Periksa pesanan kamu sebelum checkout.
+            Periksa pesanan sebelum melakukan
+            checkout.
         </p>
 
     </div>
@@ -950,8 +1394,8 @@
 
         <div id="daftarKeranjang">
 
-            <p style="text-align:center;color:#777;">
-                Keranjang masih kosong.
+            <p style="text-align:center;color:#888;">
+                Keranjang masih kosong 🍦
             </p>
 
         </div>
@@ -960,6 +1404,7 @@
         <div class="cart-total">
 
             Total:
+
             <span id="totalHarga">
                 Rp0
             </span>
@@ -972,19 +1417,83 @@
             <input
                 type="text"
                 id="namaPelanggan"
-                placeholder="Nama kamu"
+                placeholder="👤 Nama kamu"
             >
+
 
             <textarea
                 id="catatan"
-                placeholder="Catatan pesanan (opsional)"
+                placeholder="📝 Catatan pesanan (opsional)"
             ></textarea>
+
+
+            <div class="payment-title">
+                💳 Metode Pembayaran
+            </div>
+
+
+            <div class="payment-options">
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="COD"
+                        checked
+                    >
+
+                    💵 COD / Bayar di Tempat
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Transfer Bank"
+                    >
+
+                    🏦 Transfer Bank
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="QRIS"
+                    >
+
+                    📱 QRIS
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="E-Wallet"
+                    >
+
+                    💳 E-Wallet
+
+                </label>
+
+            </div>
+
 
             <button
                 class="whatsapp-btn"
                 onclick="pesanWhatsApp()">
 
-                💬 Pesan via WhatsApp
+                💬 Pesan Sekarang via WhatsApp
 
             </button>
 
@@ -1006,13 +1515,12 @@
         <div>
 
             <h2>
-                Hubungi Riki Food
+                🍦 Riki Ice Cream
             </h2>
 
             <p>
-                Punya pertanyaan atau ingin melakukan
-                pemesanan? Hubungi kami melalui informasi
-                berikut.
+                Es krim favorit untuk menemani
+                momen manis kamu dan keluarga.
             </p>
 
         </div>
@@ -1020,32 +1528,40 @@
 
         <div class="contact-info">
 
+
             <div class="contact-card">
 
-                <strong>📍 Alamat</strong>
+                <strong>
+                    📍 Alamat
+                </strong>
 
-                Jl. Kohod Pakuhaji
+                Jl. Pakuhaji
 
             </div>
 
 
             <div class="contact-card">
 
-                <strong>🕐 Jam Buka</strong>
+                <strong>
+                    🕐 Jam Buka
+                </strong>
 
                 Setiap hari,
-                09.00 - 21.00
+                10.00 - 22.00
 
             </div>
 
 
             <div class="contact-card">
 
-                <strong>📱 WhatsApp</strong>
+                <strong>
+                    📱 WhatsApp
+                </strong>
 
-               0859-5029-3506
+                0859-5029-3506
 
             </div>
+
 
         </div>
 
@@ -1060,17 +1576,17 @@
 
 <footer>
 
-    © 2026 Riki Food.
+    © 2026 Riki Ice Cream.
     Dibuat dengan ❤️ menggunakan HTML, CSS & JavaScript.
 
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
+
+    /* =========================
+       DATA KERANJANG
+    ========================= */
 
     let keranjang = [];
 
@@ -1092,9 +1608,13 @@
         } else {
 
             keranjang.push({
+
                 nama: nama,
+
                 harga: harga,
+
                 jumlah: 1
+
             });
 
         }
@@ -1129,13 +1649,15 @@
 
     function kurangiJumlah(index) {
 
-        if (keranjang[index].jumlah > 1) {
+        if (
+            keranjang[index].jumlah > 1
+        ) {
 
             keranjang[index].jumlah--;
 
         } else {
 
-            keranjang.splice(index, 1);
+            keranjang.splice(index,1);
 
         }
 
@@ -1145,118 +1667,14 @@
 
 
     /* =========================
-       HAPUS PRODUK
+       HAPUS
     ========================= */
 
     function hapusBarang(index) {
 
-        keranjang.splice(index, 1);
+        keranjang.splice(index,1);
 
         tampilkanKeranjang();
-
-    }
-
-
-    /* =========================
-       TAMPILKAN KERANJANG
-    ========================= */
-
-    function tampilkanKeranjang() {
-
-        let daftar =
-            document.getElementById(
-                "daftarKeranjang"
-            );
-
-        let total = 0;
-
-
-        if (keranjang.length === 0) {
-
-            daftar.innerHTML = `
-                <p style="text-align:center;color:#777;">
-                    Keranjang masih kosong.
-                </p>
-            `;
-
-            document.getElementById(
-                "totalHarga"
-            ).innerText = "Rp0";
-
-            return;
-        }
-
-
-        daftar.innerHTML = "";
-
-
-        keranjang.forEach(
-            (item, index) => {
-
-                let subtotal =
-                    item.harga * item.jumlah;
-
-                total += subtotal;
-
-
-                daftar.innerHTML += `
-
-                    <div class="cart-item">
-
-                        <div class="cart-item-info">
-
-                            <div class="cart-item-name">
-                                ${item.nama}
-                            </div>
-
-                            <div class="cart-item-price">
-                                ${formatRupiah(item.harga)}
-                            </div>
-
-                        </div>
-
-
-                        <div class="quantity">
-
-                            <button
-                                onclick="kurangiJumlah(${index})">
-                                −
-                            </button>
-
-                            <strong>
-                                ${item.jumlah}
-                            </strong>
-
-                            <button
-                                onclick="tambahJumlah(${index})">
-                                +
-                            </button>
-
-                        </div>
-
-
-                        <strong>
-                            ${formatRupiah(subtotal)}
-                        </strong>
-
-
-                        <button
-                            class="delete-btn"
-                            onclick="hapusBarang(${index})">
-                            🗑
-                        </button>
-
-                    </div>
-
-                `;
-
-            }
-        );
-
-
-        document.getElementById(
-            "totalHarga"
-        ).innerText = formatRupiah(total);
 
     }
 
@@ -1280,15 +1698,146 @@
 
 
     /* =========================
+       TAMPILKAN KERANJANG
+    ========================= */
+
+    function tampilkanKeranjang() {
+
+        let daftar =
+            document.getElementById(
+                "daftarKeranjang"
+            );
+
+        let total = 0;
+
+
+        if (
+            keranjang.length === 0
+        ) {
+
+            daftar.innerHTML = `
+
+                <p style="
+                    text-align:center;
+                    color:#888;
+                    padding:20px;
+                ">
+
+                    Keranjang masih kosong 🍦
+
+                </p>
+
+            `;
+
+            document.getElementById(
+                "totalHarga"
+            ).innerText = "Rp0";
+
+            return;
+
+        }
+
+
+        daftar.innerHTML = "";
+
+
+        keranjang.forEach(
+            (item,index) => {
+
+                let subtotal =
+                    item.harga *
+                    item.jumlah;
+
+                total += subtotal;
+
+
+                daftar.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <div class="cart-item-info">
+
+                            <div class="cart-item-name">
+
+                                ${item.nama}
+
+                            </div>
+
+                            <div class="cart-item-price">
+
+                                ${formatRupiah(item.harga)}
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quantity">
+
+                            <button
+                                onclick="kurangiJumlah(${index})">
+
+                                −
+
+                            </button>
+
+                            <strong>
+                                ${item.jumlah}
+                            </strong>
+
+                            <button
+                                onclick="tambahJumlah(${index})">
+
+                                +
+
+                            </button>
+
+                        </div>
+
+
+                        <strong>
+
+                            ${formatRupiah(subtotal)}
+
+                        </strong>
+
+
+                        <button
+                            class="delete-btn"
+                            onclick="hapusBarang(${index})">
+
+                            🗑
+
+                        </button>
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+
+        document.getElementById(
+            "totalHarga"
+        ).innerText =
+            formatRupiah(total);
+
+    }
+
+
+    /* =========================
        WHATSAPP
     ========================= */
 
     function pesanWhatsApp() {
 
-        if (keranjang.length === 0) {
+        if (
+            keranjang.length === 0
+        ) {
 
             alert(
-                "Keranjang masih kosong."
+                "Keranjang masih kosong 🍦"
             );
 
             return;
@@ -1297,21 +1846,33 @@
 
 
         let nama =
-            document.getElementById(
-                "namaPelanggan"
-            ).value.trim();
+            document
+                .getElementById(
+                    "namaPelanggan"
+                )
+                .value
+                .trim();
 
 
         let catatan =
-            document.getElementById(
-                "catatan"
-            ).value.trim();
+            document
+                .getElementById(
+                    "catatan"
+                )
+                .value
+                .trim();
+
+
+        let metode =
+            document.querySelector(
+                'input[name="payment"]:checked'
+            ).value;
 
 
         if (!nama) {
 
             alert(
-                "Silakan masukkan nama terlebih dahulu."
+                "Silakan masukkan nama kamu."
             );
 
             return;
@@ -1320,7 +1881,7 @@
 
 
         let pesan =
-            `Halo Riki Food 👋\n\n` +
+            `Halo Riki Ice Cream 🍦👋\n\n` +
             `Saya ingin memesan:\n\n`;
 
 
@@ -1331,13 +1892,14 @@
             item => {
 
                 let subtotal =
-                    item.harga * item.jumlah;
+                    item.harga *
+                    item.jumlah;
 
                 total += subtotal;
 
 
                 pesan +=
-                    `🍽️ ${item.nama}\n` +
+                    `🍨 ${item.nama}\n` +
                     `Jumlah: ${item.jumlah}\n` +
                     `Subtotal: ${formatRupiah(subtotal)}\n\n`;
 
@@ -1347,7 +1909,10 @@
 
         pesan +=
             `💰 Total: ${formatRupiah(total)}\n\n` +
-            `👤 Nama: ${nama}\n`;
+
+            `👤 Nama: ${nama}\n` +
+
+            `💳 Pembayaran: ${metode}\n`;
 
 
         if (catatan) {
@@ -1359,16 +1924,17 @@
 
 
         pesan +=
-            `\nTerima kasih 🙏`;
+            `\nTerima kasih 🙏🍦`;
 
 
         /*
-            GANTI NOMOR DI BAWAH
-            DENGAN NOMOR WHATSAPP RIKI FOOD
+            GANTI NOMOR INI
+            DENGAN NOMOR WHATSAPP
+            RIKI ICE CREAM
         */
 
         let nomorWhatsApp =
-            "628595029306";
+            "6281234567890";
 
 
         let url =
@@ -1386,9 +1952,15 @@
     }
 
 
+    /* =========================
+       MULAI
+    ========================= */
+
     tampilkanKeranjang();
 
 </script>
 
+
 </body>
+
 </html>
